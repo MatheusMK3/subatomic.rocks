@@ -4,7 +4,10 @@
       <div class="row">
         <div class="col-md-6 offset-md-3 col-xl-8 offset-xl-2">
           <div class="grid-row grid-align-mid grid-mt-h mb-5 mb-xl-0">
-            <h1>Não precisa de papel. Somos digitais.</h1>
+            <h1>
+              Não precisa de papel.<br class="d-block d-xl-none" />
+              Somos digitais.
+            </h1>
           </div>
           <div class="grid-row grid-align-top mb-5 mb-xl-0">
             <h2>

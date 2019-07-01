@@ -16,7 +16,7 @@ export default {
     backgroundMode: { type: String },
     backgroundPosition: { type: String },
     backgroundOpacity: { type: Number, default: 1 },
-    backgroundOffset: { type: Number, default: 0 },
+    backgroundOffset: { type: String, default: '0px' },
     backgroundColor: { type: String, default: '#000' },
     darkScheme: { type: Boolean },
   },
@@ -35,8 +35,6 @@ export default {
         if (this.backgroundPosition) styles.backgroundPosition = this.backgroundPosition
         if (this.backgroundOpacity) styles.opacity = this.backgroundOpacity
       }
-
-      console.log(styles)
 
       return styles
     }

@@ -16,6 +16,8 @@
 
 // Reset paddings & margins
 h1, h2, h3, h4, h5, h6, p {
+  display: block;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -95,7 +97,7 @@ nav {
       overflow-y: auto;
 
       &>.website-page-background {
-        position: absolute;
+        position: fixed;
         top: 0px;
         left: 0px;
         right: 0px;
@@ -144,6 +146,14 @@ nav {
     }
     h2 {
       font-size: 18px;
+      font-weight: 500;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+    p {
+      font-size: 16px;
       font-weight: 500;
     }
   }
