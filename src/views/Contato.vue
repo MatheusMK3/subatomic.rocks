@@ -15,6 +15,34 @@
               Simples assim.
             </h2>
           </div>
+          <div class="grid-row grid-align-top">
+            <form action="/contact" method="post" @submit="sendMessage">
+              <spinner />
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-input">
+                    <i class="far fa-id-card"></i>
+                    <input required type="text" :model="form.name" placeholder="Seu Nome" />
+                  </div>
+                  <div class="form-input">
+                    <i class="far fa-envelope"></i>
+                    <input required type="email" :model="form.email" placeholder="contato@subatomic.rocks" />
+                  </div>
+                  <div class="form-input">
+                    <i class="fab fa-whatsapp"></i>
+                    <input required type="tel" :model="form.phone" placeholder="+55 (19) 98335-9825" />
+                  </div>
+                  <div class="form-input">
+                    <i class="far fa-edit"></i>
+                    <textarea required :model="form.message" placeholder="Sua Mensagem"></textarea>
+                  </div>
+                  <button type="submit" class="form-button">
+                    Enviar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -26,8 +54,26 @@ export default {
   name: 'contato',
   data () {
     return {
-      background: require('../assets/contato-bg.jpg')
+      background: require('../assets/contato-bg.jpg'),
+      form: {}
+    }
+  },
+  methods: {
+    sendMessage (e) {
+      e.preventDefault()
+
+      console.log(this.form)
+
+      return false
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+form {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+</style>

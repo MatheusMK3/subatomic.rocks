@@ -25,7 +25,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss">
 @import '../node_modules/bootstrap/scss/bootstrap-reboot';
 @import '../node_modules/bootstrap/scss/bootstrap-grid';
