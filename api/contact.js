@@ -2,9 +2,7 @@
 const sendgridMail = require('@sendgrid/mail')
 sendgridMail.setApiKey(process.env.sendgrid_key)
 
-module.exports = (req, res) => {
-  console.log('Contact', req.body)
-
+module.exports = async (req, res) => {
   let { name, email, phone, message } = req.body
 
   let emailMessage = {
@@ -17,9 +15,7 @@ module.exports = (req, res) => {
     ${message}`
   }
 
-  console.log('Contact', emailMessage)
-
-  let response = sendgridMail.send(email)
+  let response = await sendgridMail.send(emailMessage)
 
   console.log('Contact', response)
   res.send('Sent.')
