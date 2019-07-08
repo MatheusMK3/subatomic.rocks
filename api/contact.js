@@ -17,6 +17,8 @@ module.exports = (req, res) => {
     ${message}`
   }
 
+  console.log('Contact', emailMessage)
+
   let response = sendgridMail.send(email)
 
   console.log('Contact', response)
