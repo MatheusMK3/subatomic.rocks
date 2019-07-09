@@ -50,19 +50,30 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'contato',
   data () {
     return {
       background: require('../assets/contato-bg.jpg'),
-      form: {}
+      isProcessing: true,
+      form: {},
     }
   },
   methods: {
     sendMessage (e) {
       e.preventDefault()
 
-      console.log('Form post:', this.form, e)
+      this.isProcessing = true
+      axios.post('/api/contact', {
+        name: this.form.name,
+        email: this.form.email,
+        phone: this.form.phone,
+        message: this.form.message,
+      }).then(response => {
+        this.$router.go('/contact/thank-you')
+      })
 
       return false
     }
