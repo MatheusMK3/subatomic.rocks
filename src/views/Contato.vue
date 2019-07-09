@@ -16,8 +16,8 @@
             </h2>
           </div>
           <div class="grid-row grid-align-top">
-            <form action="/api/contact" method="post" @submit="sendMessage">
-              <spinner />
+            <form :class="{ active: isProcessing }" action="/api/contact" method="post" @submit="sendMessage">
+              <spinner fill="#212239" :active="isProcessing" />
               <div class="row">
                 <div class="col-12">
                   <div class="form-input">
@@ -86,5 +86,9 @@ form {
   position: relative;
   display: block;
   width: 100%;
+
+  &.processing > .row {
+    opacity: 0.65;
+  }
 }
 </style>

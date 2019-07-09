@@ -1,5 +1,5 @@
 <template>
-  <div class="spinner">
+  <div class="spinner" :class="{ active: active }">
     <div class="spinner-inner">
       <svg viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g class="rotate">
@@ -16,7 +16,10 @@
 
 <script>
 export default {
-  props: ['fill'],
+  props: {
+    fill: {},
+    active: { type: Boolean, default: false }
+  },
   computed: {
     fillColor () {
       return this.fill || '#000'
