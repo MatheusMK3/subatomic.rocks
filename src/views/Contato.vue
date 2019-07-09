@@ -22,19 +22,19 @@
                 <div class="col-12">
                   <div class="form-input">
                     <i class="far fa-id-card"></i>
-                    <input required type="text" :model="form.name" name="name" placeholder="Seu Nome" />
+                    <input required type="text" v-model="form.name" name="name" placeholder="Seu Nome" />
                   </div>
                   <div class="form-input">
                     <i class="far fa-envelope"></i>
-                    <input required type="email" :model="form.email" name="email"  placeholder="contato@subatomic.rocks" />
+                    <input required type="email" v-model="form.email" name="email"  placeholder="contato@subatomic.rocks" />
                   </div>
                   <div class="form-input">
                     <i class="fab fa-whatsapp"></i>
-                    <input required type="tel" :model="form.phone" name="phone" placeholder="+55 (19) 98335-9825" />
+                    <input required type="tel" v-model="form.phone" name="phone" placeholder="+55 (19) 98335-9825" />
                   </div>
                   <div class="form-input">
                     <i class="far fa-edit"></i>
-                    <textarea required :model="form.message" name="message" placeholder="Sua Mensagem"></textarea>
+                    <textarea required v-model="form.message" name="message" placeholder="Sua Mensagem"></textarea>
                   </div>
                   <button type="submit" class="form-button">
                     Enviar
