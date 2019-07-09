@@ -72,7 +72,7 @@ export default {
         phone: this.form.phone,
         message: this.form.message,
       }).then(response => {
-        this.$router.go('/contact/thank-you')
+        this.$router.push({ path: '/contact/thank-you' })
       })
 
       return false
