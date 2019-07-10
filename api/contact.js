@@ -8,6 +8,7 @@ module.exports = async (req, res) => {
 
     let emailMessage = {
       to: 'Contato <oi@subatomic.rocks>',
+      replyto: `${name} <${email}>`,
       from: 'Website Subatomic <no-reply@subatomic.rocks>',
       subject: `Contato Web: "${name}"`,
       text: `Você recebeu um contato via website!
