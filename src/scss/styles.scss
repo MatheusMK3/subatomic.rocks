@@ -230,3 +230,81 @@ nav {
   color: inherit;
   opacity: 0.8;
 }
+
+// Mobile menu
+@media (max-width: 767px) {
+  nav {
+    .nav-logo {
+      text-align: center;
+      padding-right: 5em;
+    }
+    .nav-toggle {
+      position: absolute;
+      top: 50%;
+      right: 1em;
+
+      transform: translateY(-50%);
+
+      button {
+        color: inherit;
+        background: transparent;
+        padding: 0.5em 1em;
+        border: 1px solid;
+        border-radius: 3px;
+      }
+    }
+    .nav-main {
+      position: absolute;
+      padding: 3em 0em;
+      top: 100%;
+      left: 1em;
+      right: 1em;
+      width: auto;
+
+      border-radius: 3px;
+
+      opacity: 0;
+      margin-top: -1em;
+      pointer-events: none;
+
+      color: #fff;
+      background: #212239;
+
+      box-shadow: 0px 4px 24px rgba(#212239, 0.5);
+
+      will-change: margin-top, opacity;
+      transition: margin-top 0.5s ease, opacity 0.5s ease;
+
+      &.active {
+        pointer-events: auto;
+        margin-top: 0em;
+        opacity: 1;
+      }
+
+      font-size: 1.2em;
+      
+      a {
+        display: block;
+        padding: 0.75em 1em;
+        text-align: center;
+      }
+    }
+  }
+  .website-main {
+    .website-page {
+      .website-page-inner {
+        padding-top: 0px;
+        &>.container {
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          mask-image: linear-gradient(to bottom, transparent $grid-height - 25px, rgba(0, 0, 0, 1.0) $grid-height + 25px, rgba(0, 0, 0, 1.0) 100%);
+
+          padding-top: $grid-height;
+
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import viewport from 'responsive-toolkit'
+import viewport from '../viewport'
 
 export default {
   name: 'home',
@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     bgOpacity () {
-      return viewport.is('>=sm') ? 1.0 : 0.3
+      return viewport.fits('sm') ? 1.0 : 0.3
     }
   }
 }
