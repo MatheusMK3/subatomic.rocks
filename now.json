@@ -3,6 +3,7 @@
     "name": "subatomic-rocks",
     "alias": "subatomic.rocks",
     "builds": [
+      { "src": "src/public/favicon.png", "dest": "/favicon.png", "use": "@now/static-build" },
       { "src": "api/**.js", "use": "@now/node" },
       { "src": "package.json", "use": "@now/static-build" }
     ],
