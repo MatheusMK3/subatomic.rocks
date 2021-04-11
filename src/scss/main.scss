@@ -3,6 +3,7 @@ $breakpoint-medium: 800px;
 $breakpoint-large: 1200px;
 
 .wrapper {
+  max-width: 420px;
   margin: 0px auto;
   padding: 0px 15px;
 }
@@ -19,6 +20,7 @@ br.break {
 
 @media (min-width: $breakpoint-small) {
   .wrapper {
+    max-width: 100vw;
     width: $breakpoint-small;
     
     --column-count: 2;
@@ -317,10 +319,27 @@ main {
     ul {
       position: relative;
 
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: ". .";
+      grid-template-rows: 1fr;
+      gap: 30px 60px;
+
+      @media (min-width: $breakpoint-small) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: ". . .";
+      }
+
+      @media (min-width: $breakpoint-medium) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: ". . . .";
+      }
+
+      @media (min-width: $breakpoint-large) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: ". . . . .";
+        gap: 30px 90px;
+      }
 
       list-style-type: none;
       margin: 60px 0px;
@@ -328,14 +347,20 @@ main {
 
       li {
         display: block;
-        width: 170px;
-        height: 150px;
-        margin: 0px 30px 15px;
+
+        position: relative;
+        padding-bottom: 50%;
         
         img {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          right: 0px;
+          bottom: 0px;
+
           display: block;
-          width: inherit;
-          height: inherit;
+          width: 100%;
+          height: 100%;
 
           object-fit: contain;
           object-position: center;
