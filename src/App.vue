@@ -4,10 +4,10 @@
       <div class="wrapper">
         <img id="logo" src="./assets/logo.svg" alt="Subatomic" />
         <div class="menu-wrapper">
-          <a class="menu-toggle" href="javascript:void(0)">
+          <a class="menu-toggle" :class="{ 'active': menuStatus }" href="javascript:void(0)" @click="toggleMenu">
             <img src="./assets/icon/menu.svg" alt="Menu" title="Menu" />
           </a>
-          <ul>
+          <ul @click="toggleMenu">
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#clientes">Clientes</a></li>
@@ -65,22 +65,22 @@
           <h3>Fale Conosco</h3>
           <p class="subtitle">Vamos marcar uma call?</p>
 
-          <div class="contact-info">
+          <a class="contact-info" target="_blank" href="https://wa.me/551922220091">
             <img src="./assets/icon/whatsapp.svg" alt="WhatsApp" />
             <span>+55 (19) 2222-0091</span>
-          </div>
-          <div class="contact-info">
+          </a>
+          <a class="contact-info" target="_blank" href="mailto:contato@subatomic.rocks">
             <img src="./assets/icon/email.svg" alt="E-mail" />
             <span>contato@subatomic.rocks</span>
-          </div>
-          <div class="contact-info">
+          </a>
+          <a class="contact-info" target="_blank" href="https://m.me/subatomic.rocks">
             <img src="./assets/icon/messenger.svg" alt="Messenger" />
             <span>@subatomic.rocks</span>
-          </div>
-          <div class="contact-info">
+          </a>
+          <a class="contact-info" target="_blank" href="https://instagram.com/subatomic.rocks">
             <img src="./assets/icon/instagram.svg" alt="Instagram" />
             <span>@subatomic.rocks</span>
-          </div>
+          </a>
         </div>
       </div>
     </footer>
@@ -100,11 +100,15 @@ export default {
   },
   data () {
     return {
+      menuStatus: false,
       clients: [],
       services: [],
     }
   },
   methods: {
+    toggleMenu() {
+      this.menuStatus = !this.menuStatus
+    },
     image(imgObj) {
       return `${API_URL}${imgObj.url}`
     },
